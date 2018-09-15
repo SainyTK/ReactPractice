@@ -3,29 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-
-  state = {
-    number : 0,
-  }
-
-  handleAdd = () => {
-    const {number} = this.state
-    console.log(number)
-    this.setState({number : number + 1})
-  }
-
-  handleSub = () => {
-    const {number} = this.state
-    console.log(number)
-    this.setState({number : number - 1})
-  }
-
   render() {
+    let {number, add, sub, prevAction} = this.props;
     return (
       <div className="App">
-        <button onClick={this.handleAdd}>Add</button>
-        <div>0</div>
-        <button onClick={this.handleSub}>Sub</button>
+        <button onClick={add}>Add</button>
+        <div>{number}</div>
+        <button onClick={sub}>Sub</button>
+        <h1>{prevAction}</h1>
       </div>
     );
   }
